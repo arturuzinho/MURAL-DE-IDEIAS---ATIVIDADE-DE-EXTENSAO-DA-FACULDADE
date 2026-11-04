@@ -15,13 +15,6 @@
     --secundario: #526579;
     --borda: #DCE6EF;
 }
-.logo-azul {
-    color: #004C94;
-}
-
-.logo-laranja {
-    color: #F7941D;
-}
 
 /* CONFIGURAÇÕES GERAIS */
 
@@ -507,5 +500,14 @@ h3 {
     .cartao,
     .fluxo-etapa {
         transition: none;
+    }
+    /* Cores do logotipo - Mural de Ideias */
+
+.logo .logo-azul {
+    color: #004C94 !important;
+}
+
+.logo .logo-laranja {
+    color: #F7941D !important;
     }
 }
