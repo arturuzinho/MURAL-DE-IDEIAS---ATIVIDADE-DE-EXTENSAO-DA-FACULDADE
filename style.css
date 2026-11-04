@@ -1,0 +1,504 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* CORES PRINCIPAIS */
+
+:root {
+    --azul: #004C94;
+    --azul-escuro: #00346B;
+    --azul-claro: #EAF3FB;
+    --laranja: #F7941D;
+    --laranja-claro: #FBC483;
+    --branco: #FFFFFF;
+    --fundo: #F7FAFD;
+    --texto: #17324D;
+    --secundario: #526579;
+    --borda: #DCE6EF;
+}
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255,255,255,.96);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--borda);
+    box-shadow: 0 3px 18px rgba(0,76,148,.04);
+}
+
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 76px;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -.6px;
+    color: var(--azul);
+}
+
+.logo span:last-child {
+    color: var(--laranja);
+}
+
+.logo-icone {
+    color: var(--laranja);
+    margin-right: 5px;
+}
+
+/* MENU SUPERIOR */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--secundario);
+    transition: color .2s;
+}
+
+nav a:hover {
+    color: var(--azul);
+}
+
+/* SEÇÃO INICIAL */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at 85% 20%,
+            rgba(247,148,29,.17),
+            transparent 42%
+        ),
+        radial-gradient(
+            ellipse at 10% 70%,
+            rgba(0,76,148,.13),
+            transparent 50%
+        ),
+        linear-gradient(
+            180deg,
+            #FFFFFF,
+            #EAF3FB
+        );
+}
+
+.hero-conteudo {
+    padding: 105px 0;
+    max-width: 850px;
+}
+
+.etiqueta {
+    display: inline-block;
+    color: var(--azul);
+    background: var(--azul-claro);
+    border: 1px solid #C8DEEF;
+    padding: 7px 15px;
+    border-radius: 30px;
+    font-size: .8rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(2.7rem, 6vw, 5rem);
+    line-height: 1.12;
+    letter-spacing: -2.5px;
+    margin-bottom: 25px;
+    color: var(--azul-escuro);
+}
+
+h1 span {
+    color: #C66B00;
+}
+
+.hero p {
+    color: var(--secundario);
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.08rem;
+}
+
+/* BOTÕES */
+
+.hero-acoes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 35px;
+}
+
+.botao {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: .93rem;
+    transition:
+        transform .2s,
+        background .2s,
+        box-shadow .2s;
+}
+
+.botao:hover {
+    transform: translateY(-3px);
+}
+
+.botao-principal {
+    background: var(--laranja);
+    color: #17212D;
+    box-shadow: 0 8px 22px rgba(247,148,29,.20);
+}
+
+.botao-principal:hover {
+    background: #FFAA3D;
+    box-shadow: 0 12px 26px rgba(247,148,29,.28);
+}
+
+.botao-secundario {
+    border: 1px solid var(--azul);
+    background: white;
+    color: var(--azul);
+}
+
+.botao-secundario:hover {
+    background: var(--azul-claro);
+}
+
+.hero-destaques {
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    color: var(--secundario);
+    font-size: .8rem;
+}
+
+/* SEÇÕES */
+
+.secao {
+    padding: 100px 0;
+    background: white;
+}
+
+.secao-alternativa {
+    background: var(--azul-claro);
+}
+
+.titulo-secao {
+    text-align: center;
+    max-width: 690px;
+    margin: 0 auto 45px;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.2;
+    letter-spacing: -1.2px;
+    margin-bottom: 16px;
+    color: var(--azul-escuro);
+}
+
+.titulo-secao p,
+.cartao p,
+.passo p {
+    color: var(--secundario);
+}
+
+/* CARTÕES DO PROJETO */
+
+.grade-cartoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.cartao {
+    background: white;
+    border: 1px solid var(--borda);
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,76,148,.06);
+    transition:
+        transform .2s,
+        box-shadow .2s;
+}
+
+.cartao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 35px rgba(0,76,148,.12);
+}
+
+.cartao-icone {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--azul);
+}
+
+/* PASSO A PASSO */
+
+.grade-passos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.passo {
+    padding: 25px;
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,76,148,.04);
+}
+
+.numero {
+    display: block;
+    color: #C66B00;
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* DESTINO DAS IDEIAS */
+
+.destino-cartao {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 65px 45px;
+
+    background: linear-gradient(
+        135deg,
+        #004C94,
+        #00346B
+    );
+
+    border-radius: 28px;
+    box-shadow: 0 18px 45px rgba(0,76,148,.17);
+}
+
+.destino-cartao h2 {
+    color: white;
+}
+
+.destino-cartao .etiqueta {
+    background: rgba(255,255,255,.12);
+    color: var(--laranja-claro);
+    border-color: rgba(255,255,255,.2);
+}
+
+.destino-introducao {
+    color: #E1ECF7;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+/* ETAPAS DO DESTINO */
+
+.fluxo-ideias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 35px 0;
+    text-align: left;
+}
+
+.fluxo-etapa {
+    position: relative;
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 28px 22px;
+    transition:
+        transform .2s,
+        box-shadow .2s;
+}
+
+.fluxo-etapa:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.12);
+}
+
+.fluxo-numero {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    color: #C66B00;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+.fluxo-icone {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.fluxo-etapa h3 {
+    color: var(--azul);
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.fluxo-etapa p {
+    color: var(--secundario);
+    font-size: .88rem;
+}
+
+/* CHAMADA FINAL */
+
+.destino-final {
+    margin-top: 45px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.destino-final h3 {
+    color: white;
+    font-size: 1.4rem;
+}
+
+.destino-final p {
+    color: #E1ECF7;
+    margin-bottom: 25px;
+}
+
+.destino-cartao .aviso {
+    font-size: .78rem;
+    margin: 30px auto 0;
+    max-width: 650px;
+    color: #D5E5F4;
+}
+
+/* RODAPÉ */
+
+.rodape {
+    background: var(--azul-escuro);
+    padding: 30px 0;
+}
+
+.rodape-conteudo {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: #E0ECF7;
+    font-size: .85rem;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+    .navegacao {
+        flex-direction: column;
+        padding: 18px 0;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .grade-passos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-conteudo {
+        padding: 80px 0;
+    }
+
+    h1 {
+        letter-spacing: -1px;
+    }
+
+    .grade-cartoes,
+    .grade-passos,
+    .fluxo-ideias {
+        grid-template-columns: 1fr;
+    }
+
+    .secao {
+        padding: 70px 0;
+    }
+
+    .destino-cartao {
+        padding: 45px 22px;
+    }
+
+    .fluxo-etapa {
+        text-align: center;
+    }
+
+    .rodape-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .botao,
+    .cartao,
+    .fluxo-etapa {
+        transition: none;
+    }
+}
